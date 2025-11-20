@@ -23,19 +23,9 @@ public class Client {
     @ManyToOne
     private Conseiller conseiller;
 
-    @OneToOne(cascade = CascadeType.ALL)
+/*    @OneToOne(cascade = CascadeType.ALL)
     private CompteCourant compteCourant = new CompteCourant();
 
     @OneToOne(cascade = CascadeType.ALL)
-    private CompteEpargne compteEpargne = new CompteEpargne();
-
-    public Client(String nom, String prenom, String adresse, String codePostal, String ville, String telephone,  Conseiller conseiller) {
-        this.nom = nom;
-        this.prenom = prenom;
-        this.adresse = adresse;
-        this.codePostal = codePostal;
-        this.ville = ville;
-        this.telephone = telephone;
-        this.conseiller = conseiller;
-    }
+    private CompteEpargne compteEpargne = new CompteEpargne();*/
 }
