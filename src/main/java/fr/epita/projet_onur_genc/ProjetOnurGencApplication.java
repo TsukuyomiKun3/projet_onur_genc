@@ -1,0 +1,13 @@
+package fr.epita.projet_onur_genc;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class ProjetOnurGencApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(ProjetOnurGencApplication.class, args);
+    }
+
+}
