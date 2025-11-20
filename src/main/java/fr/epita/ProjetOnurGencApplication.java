@@ -1,4 +1,4 @@
-package fr.epita.projet_onur_genc;
+package fr.epita;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
