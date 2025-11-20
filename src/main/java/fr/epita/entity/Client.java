@@ -1,12 +1,13 @@
 package fr.epita.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @Data
 @NoArgsConstructor
+@Setter
+@Getter
 public class Client {
 
     @Id
