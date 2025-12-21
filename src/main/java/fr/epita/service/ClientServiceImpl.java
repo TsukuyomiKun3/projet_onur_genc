@@ -33,12 +33,18 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public Client updateClient(Client client) {
         Optional<Client> optionalClient = getClientById(client.getId());
-        System.out.println("Inside the function");
 
         if (optionalClient.isPresent()) {
             return clientRepository.save(client);
         } else {
             return null;
         }
+    }
+
+    @Override
+    public void deleteClient(Long id) {
+        Optional<Client> optionalClient = getClientById(id);
+
+        optionalClient.ifPresent(clientRepository::delete);
     }
 }

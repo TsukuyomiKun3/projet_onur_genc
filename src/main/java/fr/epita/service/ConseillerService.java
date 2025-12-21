@@ -12,4 +12,5 @@ public interface ConseillerService {
 
     Conseiller createConseiller(Conseiller conseiller);
     Conseiller updateConseiller(Conseiller conseiller);
+    void deleteConseiller(Long id);
 }

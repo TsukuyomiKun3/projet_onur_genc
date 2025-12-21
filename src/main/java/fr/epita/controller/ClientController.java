@@ -3,6 +3,7 @@ package fr.epita.controller;
 import fr.epita.entity.Client;
 import fr.epita.service.ClientService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,13 +15,14 @@ public class ClientController {
     private final ClientService service;
 
     @GetMapping("/clients")
-    List<Client> getClients() {
-        return service.getClients();
+    ResponseEntity<List<Client>> getClients() {
+        return ResponseEntity.ok(service.getClients());
     }
 
     @PostMapping("/clients")
-    Client createClient(@RequestBody Client client) {
-        return service.createClient(client);
+    ResponseEntity<Client> createClient(@RequestBody Client client) {
+        Client c = service.createClient(client);
+        return ResponseEntity.status(HttpStatus.CREATED).body(c);
     }
 
     @GetMapping("/clients/{id}")
@@ -29,7 +31,15 @@ public class ClientController {
     }
 
     @PutMapping("/clients")
-    Client updateClient(@RequestBody Client client) {
-        return service.updateClient(client);
+    ResponseEntity<Client> updateClient(@RequestBody Client client) {
+        Client c = service.updateClient(client);
+        return ResponseEntity.ok(c);
+    }
+
+    @DeleteMapping("/clients/{id}")
+    ResponseEntity<Void> deleteClient(@PathVariable Long id) {
+        service.deleteClient(id);
+
+        return ResponseEntity.noContent().build();
     }
 }

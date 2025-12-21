@@ -39,5 +39,13 @@ public class ConseillerServiceImpl implements ConseillerService {
             return repo.save(conseiller);
         } else {
             return null;
-        }    }
+        }
+    }
+
+    @Override
+    public void deleteConseiller(Long id) {
+        Optional<Conseiller> opC = getConseillerById(id);
+
+        opC.ifPresent(repo::delete);
+    }
 }

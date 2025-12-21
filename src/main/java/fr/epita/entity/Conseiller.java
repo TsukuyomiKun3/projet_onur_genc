@@ -1,5 +1,6 @@
 package fr.epita.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,7 +20,8 @@ public class Conseiller {
     private String nom;
     private String prenom;
 
-    @OneToMany(mappedBy = "conseiller", fetch=FetchType.EAGER, cascade={CascadeType.PERSIST})
+    @JsonIgnore
+    @OneToMany(mappedBy = "conseiller", fetch=FetchType.LAZY, cascade={CascadeType.PERSIST})
     private Set<Client> clients = new HashSet<Client>();
 
     public Conseiller(String nom, String prenom) {

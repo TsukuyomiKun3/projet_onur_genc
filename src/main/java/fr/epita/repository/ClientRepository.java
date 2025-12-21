@@ -1,6 +1,5 @@
 package fr.epita.repository;
 
-
 import fr.epita.entity.Client;
 import org.springframework.data.jpa.repository.JpaRepository;
 
